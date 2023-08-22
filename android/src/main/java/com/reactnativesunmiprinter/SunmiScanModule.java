@@ -1,10 +1,7 @@
 package com.reactnativesunmiprinter;
 
 import android.app.Activity;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -25,24 +22,7 @@ public class SunmiScanModule extends ReactContextBaseJavaModule {
   private static final int START_SCAN = 0x0000;
   private static final String E_ACTIVITY_DOES_NOT_EXIST = "E_ACTIVITY_DOES_NOT_EXIST";
   private static final String E_FAILED_TO_SHOW_SCAN = "E_FAILED_TO_SHOW_SCAN";
-  private static final String ACTION_DATA_CODE_RECEIVED = "com.sunmi.scanner.ACTION_DATA_CODE_RECEIVED";
-  private static final String DATA = "data";
-  private static final String SOURCE = "source_byte";
   private Promise mPickerPromise;
-
-  private BroadcastReceiver receiver = new BroadcastReceiver() {
-    @Override
-    public void onReceive(Context context, Intent intent) {
-      String action = intent.getAction();
-      if (ACTION_DATA_CODE_RECEIVED.equals(action)) {
-        String code = intent.getStringExtra(DATA);
-        byte[] arr = intent.getByteArrayExtra(SOURCE);
-        if (code != null && !code.isEmpty()) {
-          sendEvent(code);
-        }
-      }
-    }
-  };
 
   private final ActivityEventListener mActivityEventListener = new BaseActivityEventListener() {
     @Override
@@ -65,7 +45,6 @@ public class SunmiScanModule extends ReactContextBaseJavaModule {
     super(context);
     reactContext = context;
     reactContext.addActivityEventListener(mActivityEventListener);
-    registerReceiver();
   }
 
   @Override
@@ -90,12 +69,6 @@ public class SunmiScanModule extends ReactContextBaseJavaModule {
       mPickerPromise.reject("E_FAILED_TO_SHOW_SCAN", e);
       mPickerPromise = null;
     }
-  }
-
-  private void registerReceiver() {
-    IntentFilter filter = new IntentFilter();
-    filter.addAction(ACTION_DATA_CODE_RECEIVED);
-    reactContext.registerReceiver(receiver, filter);
   }
 
   private static void sendEvent(String msg) {

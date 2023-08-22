@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import SunmiPrinter, {
   AlignValue,
   SunmiScan,
-} from '@heasy/react-native-sunmi-printer';
+} from '@tasty/react-native-sunmi-printer';
 
 export default function App() {
   const _printRecieve = () => {
@@ -30,7 +30,7 @@ export default function App() {
     SunmiPrinter.lineWrap(1);
     SunmiPrinter.setAlignment(AlignValue.CENTER);
     SunmiPrinter.print2DCode(
-      'https://qr.api.cli.im/newqr/create?data=https%253A%252F%252Fgithub.com%252FSurile%252Freact-native-sunmi-printer&level=H&transparent=false&bgcolor=%23FFFFFF&forecolor=%23000000&blockpixel=12&marginblock=1&logourl=&logoshape=no&size=260&kid=cliim&key=db8abf82a7306ec8f01d41c1155b0a9d',
+      'https://qr.api.cli.im/newqr/create?data=https%253A%252F%252Fgithub.com%252FBigPun86%252Freact-native-sunmi-printer&level=H&transparent=false&bgcolor=%23FFFFFF&forecolor=%23000000&blockpixel=12&marginblock=1&logourl=&logoshape=no&size=260&kid=cliim&key=db8abf82a7306ec8f01d41c1155b0a9d',
       1,
       4,
       4
@@ -40,7 +40,7 @@ export default function App() {
     SunmiPrinter.printerText('扫码自助申请电子发票\n');
     SunmiPrinter.lineWrap(1);
     SunmiPrinter.printColumnsString(
-      ['服务员', 'Surile'],
+      ['服务员', 'BigPun86'],
       [60, 120],
       [AlignValue.LEFT, AlignValue.RIGHT]
     );

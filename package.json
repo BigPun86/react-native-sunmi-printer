@@ -1,7 +1,7 @@
 {
-  "name": "@heasy/react-native-sunmi-printer",
+  "name": "@tasty/react-native-sunmi-printer",
   "version": "1.7.0",
-  "description": "商米内置打印",
+  "description": "Sunmi Tasty Restaurant App",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
@@ -32,13 +32,13 @@
     "sunmi",
     "SunmiPrinterDemo"
   ],
-  "repository": "https://github.com/Surile/react-native-sunmi-printer",
-  "author": "夜雨 <mhecy98@gmail.com> (https://github.com/Surile)",
+  "repository": "https://github.com/BigPun86/react-native-sunmi-printer",
+  "author": "Adel Grimm <grimm@tasty-delivery.de> (https://github.com/BigPun86)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Surile/react-native-sunmi-printer/issues"
+    "url": "https://github.com/BigPun86/react-native-sunmi-printer/issues"
   },
-  "homepage": "https://github.com/Surile/react-native-sunmi-printer#readme",
+  "homepage": "https://github.com/BigPun86/react-native-sunmi-printer#readme",
   "publishConfig": {
     "access": "public"
   },

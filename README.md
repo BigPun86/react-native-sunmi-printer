@@ -1,4 +1,4 @@
-# @heasy/react-native-sunmi-printer
+# @tasty/react-native-sunmi-printer
 
 Caution: this is not the official project. I share it because I am working on this device but no any official support in react-native It's welcome to ask any question about the usage,problems or feature required, I will support ASAP.
 
@@ -10,20 +10,19 @@ Offical Demos plz refer: https://github.com/shangmisunmi/SunmiPrinterDemo
 - [Linking](#Linking)
 - [Usage](#Usage)
 - [API](#API)
-- [Broadcast Events Listener](#Broadcast-Event-Listener)
 
 ## Installation:
 
 Using npm：
 
 ```bash
-npm install @heasy/react-native-sunmi-printer --save
+npm install @tasty/react-native-sunmi-printer --save
 ```
 
 or using yarn：
 
 ```bash
-yarn add @heasy/react-native-sunmi-printer
+yarn add @tasty/react-native-sunmi-printer
 ```
 
 ## Linking
@@ -35,15 +34,15 @@ Previous versions need to do manual linking.
 ## Usage
 
 ```js
-import SunmiPrinter from '@heasy/react-native-sunmi-printer';
+import SunmiPrinter from '@tasty/react-native-sunmi-printer';
 
-SunmiPrinter.printerText('Hello World\n');
+SunmiPrinter.printerText('测试打印\n');
 ```
 
 ## Scan
 
 ```js
-import { SunmiScan } from '@heasy/react-native-sunmi-printer';
+import { SunmiScan } from '@tasty/react-native-sunmi-printer';
 
 useEffect(() => {
   DeviceEventEmitter.addListener('onScanSuccess', (msg) => {
@@ -67,7 +66,7 @@ The example app in this repository shows an example usage of every single API, c
 | [getPrinterVersion()](#getPrinterVersion)                               | `Promise<string>` | ❌  |   ✅    |   ❌    | ❌  |
 | [getServiceVersion()](#getServiceVersion)                               | `Promise<string>` | ❌  |   ✅    |   ❌    | ❌  |
 | [getPrinterModal()](#getPrinterModal)                                   | `Promise<string>` | ❌  |   ✅    |   ❌    | ❌  |
-| [getPrinterPaper()](#getPrinterPaper)                                   | `Promise<string>` | ❌  |   ✅    |   ❌    | ❌  |
+| [getPrinterPaper()](#getPrinterPaper)                                   | `Promise<number>` | ❌  |   ✅    |   ❌    | ❌  |
 | [getPrintedLength()](#getPrintedLength)                                 | `null`            | ❌  |   ✅    |   ❌    | ❌  |
 | [updatePrinterState()](#updatePrinterState)                             | `Promise<number>` | ❌  |   ✅    |   ❌    | ❌  |
 | [sendRAWData()](#sendRAWData)                                           | `null`            | ❌  |   ✅    |   ❌    | ❌  |
@@ -96,22 +95,6 @@ The example app in this repository shows an example usage of every single API, c
 | [getDrawerStatus()](#getCutPaperTimes)                                  | `null`            | ❌  |   ✅    |   ❌    | ❌  |
 | [printBitmap()](#printBitmap)                                           | `null`            | ❌  |   ✅    |   ❌    | ❌  |
 | [printBitmapCustom()](#printBitmapCustom)                               | `null`            | ❌  |   ✅    |   ❌    | ❌  |
-
-## Broadcast-Event-Listener
-
-You can enable `Output Via Broadcast` option in your SUNMI Device `Scanner's Settings` and then listen the `onScanSuccess` Event with the `result`.
-You have to use physical special key buttons on your SUNMI device or soft floating button on your device (if you enabled that)  to trigger infrared scanning for the barcodes . And then afterwards , you can get the result in the `onScanSuccess` event.
-
-```js
-
-useEffect(() => {
-  DeviceEventEmitter.addListener('onScanSuccess', (msg) => {
-    console.log('result', msg);
-  });
-  return () => DeviceEventEmitter.removeAllListeners('onScanSuccess');
-}, []);
-
-```
 
 ## Contributing
 

@@ -77,7 +77,7 @@ type SunmiPrinterType = {
    * ⼿持打印机默认为58mm的纸张规格，台式打印机默认为80mm的纸张规格，但可以通过增加挡
    * 板并进⾏打印机配置设置为使⽤58mm的纸张规格，此接⼝会返回当前打印机设置的纸张规格；
    */
-  getPrinterPaper: () => Promise<string>;
+  getPrinterPaper: () => Promise<number>;
   /**
    * 获取打印头打印长度
    * ⽬前可获取到上电以来的打印⻓度，由于台式机和⼿持机的硬件区别，获取打印结果的返回略有
@@ -313,7 +313,7 @@ type SunmiPrinterType = {
    * 打印图片
    * 图⽚最⼤像素需要宽x⾼⼩于250万，且宽度根据纸张规格设置（58为384像素，80为576像素），
    * 如果超过纸张宽度将不显示
-   * https://github.com/Surile/react-native-sunmi-printer/issues/1#issuecomment-1088685896
+   * https://github.com/BigPun86/react-native-sunmi-printer/issues/1#issuecomment-1088685896
    * @param encodedString
    * @param pixelWidth
    */
