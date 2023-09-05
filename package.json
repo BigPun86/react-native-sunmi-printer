@@ -1,6 +1,6 @@
 {
   "name": "@tasty/react-native-sunmi-printer",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "Sunmi Tasty Restaurant App",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
